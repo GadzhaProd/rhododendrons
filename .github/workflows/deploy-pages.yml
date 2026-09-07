@@ -45,26 +45,12 @@ jobs:
       - run: npm ci
 
       # public/images holds 17-21 MB camera originals and images.unoptimized
-      # is on, so visitors would download the full files. Shrink the copies in
-      # this checkout only — the repository keeps the originals.
+      # is on, so visitors would download the full files. This resizes the
+      # copies in this checkout only — the repository keeps the originals.
       - name: Shrink oversized images for the preview
         run: |
-          if command -v magick >/dev/null 2>&1; then
-            convert_cmd="magick"
-          elif command -v convert >/dev/null 2>&1; then
-            convert_cmd="convert"
-          else
-            echo "ImageMagick not available — deploying full-size images."
-            exit 0
-          fi
-          find public/images -type f -size +2M \
-            \( -iname '*.jpg' -o -iname '*.jpeg' -o -iname '*.png' \) -print0 |
-            while IFS= read -r -d '' f; do
-              before=$(du -h "$f" | cut -f1)
-              "$convert_cmd" "$f" -auto-orient -resize '2000x2000>' -quality 82 -strip "$f"
-              echo "  $f: $before -> $(du -h "$f" | cut -f1)"
-            done
-          echo "public/images is now $(du -sh public/images | cut -f1)"
+          node -e "require('sharp')" 2>/dev/null || npm install --no-save sharp
+          node scripts/shrink-preview-images.mjs
 
       # Route handlers (POST, nodemailer) cannot be statically exported.
       - name: Drop server-only API routes
