@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect, useCallback } from "react"
-import Image from "next/image"
+import { Image } from "@/components/site-image"
 import { ChevronLeft, ChevronRight, X } from "lucide-react"
 
 type Props = {

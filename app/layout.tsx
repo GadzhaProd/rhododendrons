@@ -6,6 +6,7 @@ import { CartProvider } from '@/lib/cart-context'
 import { CartDrawer } from '@/components/cart-drawer'
 import { siteConfig } from '@/lib/site-config'
 import { asset } from '@/lib/base-path'
+import { isDemoMode } from '@/lib/demo-mode'
 import './globals.css'
 
 const dmSans = DM_Sans({
@@ -130,7 +131,8 @@ export default function RootLayout({
           {children}
           <CartDrawer />
         </CartProvider>
-        <Analytics />
+        {/* No Vercel endpoint on the static preview host — it would only 404. */}
+        {!isDemoMode && <Analytics />}
       </body>
     </html>
   )

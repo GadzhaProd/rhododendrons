@@ -1,4 +1,5 @@
-import Image from "next/image"
+import { Image } from "@/components/site-image"
+import { asset } from "@/lib/base-path"
 import { ArrowRight, ChevronDown, Phone } from "lucide-react"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
@@ -22,7 +23,7 @@ export const metadata = {
     url: "/groothandel",
     images: [
       {
-        url: "/images/B2BHERO.jpg",
+        url: asset("/images/B2BHERO.jpg"),
         width: 2048,
         height: 1143,
         alt: "Rhododendrons op stam, direct van de kwekerij in Otterlo. 10.000+ planten op voorraad voor hoveniers en projectontwikkelaars.",
@@ -33,7 +34,7 @@ export const metadata = {
     card: "summary_large_image",
     title: groothandelTitle,
     description: groothandelDescription,
-    images: ["/images/B2BHERO.jpg"],
+    images: [asset("/images/B2BHERO.jpg")],
   },
 }
 

@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import Image from "next/image"
+import { Image } from "@/components/site-image"
 import { useCart } from "@/lib/cart-context"
 import { tuinturf } from "@/lib/products"
 
