@@ -2,6 +2,10 @@ import type { MetadataRoute } from "next"
 import { products, tuinturf } from "@/lib/products"
 import { siteConfig } from "@/lib/site-config"
 
+// Generated once at build time; required so this route can be emitted as a
+// file by `output: "export"` (the GitHub Pages preview build).
+export const dynamic = "force-static"
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date()
   const { baseUrl } = siteConfig

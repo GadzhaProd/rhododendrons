@@ -5,6 +5,7 @@ import { Analytics } from '@vercel/analytics/next'
 import { CartProvider } from '@/lib/cart-context'
 import { CartDrawer } from '@/components/cart-drawer'
 import { siteConfig } from '@/lib/site-config'
+import { asset } from '@/lib/base-path'
 import './globals.css'
 
 const dmSans = DM_Sans({
@@ -38,7 +39,7 @@ export const metadata: Metadata = {
     url: siteConfig.baseUrl,
     images: [
       {
-        url: siteConfig.ogImage.url,
+        url: asset(siteConfig.ogImage.url),
         width: siteConfig.ogImage.width,
         height: siteConfig.ogImage.height,
         alt: siteConfig.ogImage.alt,
@@ -49,24 +50,24 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: defaultTitle,
     description: defaultDescription,
-    images: [siteConfig.ogImage.url],
+    images: [asset(siteConfig.ogImage.url)],
   },
   icons: {
     icon: [
       {
-        url: '/icon-light-32x32.png',
+        url: asset('/icon-light-32x32.png'),
         media: '(prefers-color-scheme: light)',
       },
       {
-        url: '/icon-dark-32x32.png',
+        url: asset('/icon-dark-32x32.png'),
         media: '(prefers-color-scheme: dark)',
       },
       {
-        url: '/icon.svg',
+        url: asset('/icon.svg'),
         type: 'image/svg+xml',
       },
     ],
-    apple: '/apple-icon.png',
+    apple: asset('/apple-icon.png'),
   },
 }
 

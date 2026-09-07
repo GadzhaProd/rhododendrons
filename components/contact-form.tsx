@@ -11,6 +11,7 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
 import type { OfferteType } from "@/components/offerte-modal"
+import { isDemoMode } from "@/lib/demo-mode"
 
 const schema = z.object({
   type: z.enum(["particulier", "hovenier"]),
@@ -56,6 +57,11 @@ export function ContactForm() {
   const onSubmit = async (data: FormData) => {
     // Honeypot client-side: silently "succeed" without sending
     if (data.website && data.website.length > 0) {
+      return
+    }
+
+    // Static preview build: no server to POST to, so confirm without sending.
+    if (isDemoMode) {
       return
     }
 
@@ -293,6 +299,9 @@ export function ContactForm() {
 
                     {errors.root && (
                       <p className="text-sm text-destructive text-center">{errors.root.message}</p>
+                    )}
+                    {isDemoMode && (
+                      <p className="text-sm text-muted-foreground text-center">Demo-versie: dit formulier wordt niet daadwerkelijk verzonden.</p>
                     )}
 
                     <Button

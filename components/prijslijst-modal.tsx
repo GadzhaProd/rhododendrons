@@ -9,6 +9,7 @@ import {
   DialogTitle,
   DialogDescription,
 } from "@/components/ui/dialog"
+import { isDemoMode } from "@/lib/demo-mode"
 
 interface Props {
   open: boolean
@@ -28,14 +29,17 @@ export function PrijslijstModal({ open, onOpenChange }: Props) {
     setError("")
     setLoading(true)
 
-    try {
-      await fetch("/api/prijslijst-lead", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ naam, email, bedrijf }),
-      })
-    } catch {
-      // fire-and-forget — doorgaan ook als API niet bereikbaar is
+    // Static preview build: no server to POST to, so skip the call entirely.
+    if (!isDemoMode) {
+      try {
+        await fetch("/api/prijslijst-lead", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ naam, email, bedrijf }),
+        })
+      } catch {
+        // fire-and-forget — doorgaan ook als API niet bereikbaar is
+      }
     }
 
     setLoading(false)

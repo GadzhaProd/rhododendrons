@@ -1,3 +1,5 @@
+import { asset } from "@/lib/base-path"
+
 export function HeroSection() {
   return (
     <section className="relative min-h-[100svh] flex items-end justify-center overflow-hidden pb-24">
@@ -9,16 +11,16 @@ export function HeroSection() {
           loop
           playsInline
           aria-hidden="true"
-          poster="/images/hero-rhododendrons.jpg"
+          poster={asset("/images/hero-rhododendrons.jpg")}
           className="absolute inset-0 w-full h-full object-cover [object-position:center_15%] scale-100 motion-reduce:hidden"
         >
           <source
-            src="/videos/hero.mp4"
+            src={asset("/videos/hero.mp4")}
             type="video/mp4"
           />
         </video>
         <img
-          src="/images/hero-rhododendrons.jpg"
+          src={asset("/images/hero-rhododendrons.jpg")}
           alt=""
           aria-hidden="true"
           className="absolute inset-0 w-full h-full object-cover [object-position:center_15%] hidden motion-reduce:block"
