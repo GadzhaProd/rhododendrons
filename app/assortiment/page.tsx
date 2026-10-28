@@ -17,7 +17,7 @@ export default function AssortimentPage() {
         {/* Header */}
         <div className="bg-secondary/50 py-16 lg:py-24">
           <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-            <span className="text-accent font-medium text-sm uppercase tracking-wider">
+            <span className="text-accent-text font-medium text-sm uppercase tracking-wider">
               Otterlo • Sinds 2001
             </span>
             <h1 className="mt-4 font-serif text-4xl font-semibold tracking-tight text-foreground sm:text-5xl lg:text-6xl">

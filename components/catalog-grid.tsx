@@ -95,7 +95,7 @@ export function CatalogGrid({
 
       {toebehoren && (
         <section className="mt-20 lg:mt-32 pt-12 lg:pt-16 border-t border-border">
-          <span className="text-accent text-xs font-medium uppercase tracking-wider">
+          <span className="text-accent-text text-xs font-medium uppercase tracking-wider">
             Toebehoren
           </span>
           <h2 className="mt-2 font-serif text-2xl lg:text-3xl font-medium tracking-tight text-foreground">

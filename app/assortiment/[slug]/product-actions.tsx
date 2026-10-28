@@ -57,7 +57,7 @@ export function ProductActions({ product }: { product: Product }) {
               }`}
             >
               <span className="text-sm font-medium text-foreground">{size.label}</span>
-              <span className="text-sm font-semibold text-accent">€{size.price}</span>
+              <span className="text-sm font-semibold text-accent-text">€{size.price}</span>
             </button>
           ))}
         </div>
@@ -108,7 +108,7 @@ export function ProductActions({ product }: { product: Product }) {
             <Check className="w-3 h-3 text-white" strokeWidth={3} />
           </span>
         )}
-        <span className="text-xs uppercase tracking-wider text-accent font-semibold">Aanbevolen accessoire</span>
+        <span className="text-xs uppercase tracking-wider text-accent-text font-semibold">Aanbevolen accessoire</span>
         <div className="flex items-start gap-3 mt-2">
           <Image
             src="/images/tuinturf.jpg"
@@ -122,7 +122,7 @@ export function ProductActions({ product }: { product: Product }) {
             <p className="text-xs text-muted-foreground leading-relaxed mt-0.5">
               Voor een optimale aanslag raden wij ons speciaal samengesteld substraat aan.
             </p>
-            <span className="inline-block mt-1 text-xs font-medium text-accent">+€14,95 per zak (40L)</span>
+            <span className="inline-block mt-1 text-xs font-medium text-accent-text">+€14,95 per zak (40L)</span>
           </div>
         </div>
       </button>

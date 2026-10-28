@@ -56,7 +56,7 @@ export default function PrivacyPage() {
             Deze website gebruikt geen tracking-cookies van derden.
           </p>
         </div>
-        <Link href="/" className="mt-12 inline-block text-accent hover:text-accent/80 transition-colors">
+        <Link href="/" className="mt-12 inline-block text-accent-text hover:text-accent-text/80 transition-colors">
           ← Terug naar home
         </Link>
       </div>

@@ -158,7 +158,7 @@ export function PlantgidsComparisonTable({ data }: { data: ComparisonRow[] }) {
                   <Link
                     href={`/assortiment/${row.slug}`}
                     onClick={(e) => e.stopPropagation()}
-                    className="font-serif text-base font-medium text-foreground hover:text-accent focus-visible:outline-none focus-visible:text-accent rounded-sm"
+                    className="font-serif text-base font-medium text-foreground hover:text-accent-text focus-visible:outline-none focus-visible:text-accent-text rounded-sm"
                   >
                     {row.name}
                   </Link>

@@ -166,7 +166,7 @@ export default function PlantgidsPage() {
         {/* Hero */}
         <section className="py-16 lg:py-24 bg-secondary/50">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <span className="text-accent font-medium text-sm uppercase tracking-wider">
+            <span className="text-accent-text font-medium text-sm uppercase tracking-wider">
               Plantgids
             </span>
             <h1 className="mt-4 font-serif text-4xl font-semibold tracking-tight text-foreground sm:text-5xl lg:text-6xl text-balance">
@@ -182,7 +182,7 @@ export default function PlantgidsPage() {
         <section className="py-16 lg:py-24">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="mb-10">
-              <span className="text-accent font-medium text-sm uppercase tracking-wider">
+              <span className="text-accent-text font-medium text-sm uppercase tracking-wider">
                 Vergelijken
               </span>
               <h2 className="mt-3 font-serif text-3xl font-medium tracking-tight text-foreground sm:text-4xl">
@@ -202,7 +202,7 @@ export default function PlantgidsPage() {
         <section className="py-20 lg:py-28 bg-secondary/30">
           <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
             <div className="mb-12">
-              <span className="text-accent font-medium text-sm uppercase tracking-wider">
+              <span className="text-accent-text font-medium text-sm uppercase tracking-wider">
                 De geheimen van de kweker
               </span>
               <h2 className="mt-3 font-serif text-3xl font-medium tracking-tight text-foreground sm:text-4xl text-balance">

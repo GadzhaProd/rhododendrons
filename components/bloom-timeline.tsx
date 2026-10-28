@@ -53,7 +53,7 @@ export function BloomTimeline({
                 <div key={m} className="text-center relative">
                   <span
                     className={`font-sans text-xs uppercase font-semibold tracking-wider ${
-                      isCurrent ? "text-accent" : "text-muted-foreground"
+                      isCurrent ? "text-accent-text" : "text-muted-foreground"
                     }`}
                   >
                     {m}

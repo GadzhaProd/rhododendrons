@@ -67,7 +67,7 @@ export function FaqSection() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-12">
-          <span className="text-accent font-medium text-sm uppercase tracking-wider">
+          <span className="text-accent-text font-medium text-sm uppercase tracking-wider">
             Vraag & advies
           </span>
           <h2 className="mt-4 font-serif text-4xl font-medium tracking-tight text-foreground sm:text-5xl lg:text-6xl text-balance">
@@ -83,7 +83,7 @@ export function FaqSection() {
           <Accordion type="single" collapsible className="w-full">
             {faqs.map((faq) => (
               <AccordionItem key={faq.id} value={faq.id}>
-                <AccordionTrigger className="text-base font-medium text-foreground hover:no-underline hover:text-accent py-5 text-left">
+                <AccordionTrigger className="text-base font-medium text-foreground hover:no-underline hover:text-accent-text py-5 text-left">
                   {faq.question}
                 </AccordionTrigger>
                 <AccordionContent className="text-muted-foreground leading-relaxed">

@@ -24,7 +24,7 @@ export function BloomSection() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-12">
-          <span className="text-accent font-medium text-xs uppercase tracking-wider">
+          <span className="text-accent-text font-medium text-xs uppercase tracking-wider">
             Bloei- &amp; Plantkalender
           </span>
           <h2 className="mt-4 font-serif text-4xl font-medium tracking-tight text-foreground sm:text-5xl lg:text-6xl text-balance">

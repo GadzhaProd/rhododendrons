@@ -52,7 +52,7 @@ export default function VoorwaardenPage() {
             Voor vragen: info@toprhododendrons.nl of +31 (0)6 20 10 43 12
           </p>
         </div>
-        <Link href="/" className="mt-12 inline-block text-accent hover:text-accent/80 transition-colors">
+        <Link href="/" className="mt-12 inline-block text-accent-text hover:text-accent-text/80 transition-colors">
           ← Terug naar home
         </Link>
       </div>

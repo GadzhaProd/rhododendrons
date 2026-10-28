@@ -351,7 +351,7 @@ export default function GroothandelPage() {
         <section className="py-16 lg:py-24 bg-background">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl">
-              <span className="text-accent font-medium text-xs uppercase tracking-wider">VOOR PROFESSIONALS</span>
+              <span className="text-accent-text font-medium text-xs uppercase tracking-wider">VOOR PROFESSIONALS</span>
               <h2 className="mt-3 font-serif text-4xl lg:text-5xl font-medium text-foreground">
                 Wie wij beleveren
               </h2>
@@ -403,7 +403,7 @@ export default function GroothandelPage() {
         <section id="hoe-wij-werken" className="scroll-mt-24 py-12 lg:py-20 bg-secondary/30">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl">
-              <span className="text-accent font-medium text-xs uppercase tracking-wider">ONZE VOORDELEN</span>
+              <span className="text-accent-text font-medium text-xs uppercase tracking-wider">ONZE VOORDELEN</span>
               <h2 className="mt-3 font-serif text-4xl lg:text-5xl font-medium text-foreground">
                 Hoe wij voor u werken
               </h2>
@@ -430,7 +430,7 @@ export default function GroothandelPage() {
         <section id="aantallen" className="scroll-mt-24 py-16 lg:py-24 bg-background">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl">
-              <span className="text-accent font-medium text-xs uppercase tracking-wider">DIRECT BESCHIKBAAR</span>
+              <span className="text-accent-text font-medium text-xs uppercase tracking-wider">DIRECT BESCHIKBAAR</span>
               <h2 className="mt-3 font-serif text-4xl lg:text-5xl font-medium text-foreground">
                 Beschikbare aantallen
               </h2>
@@ -470,7 +470,7 @@ export default function GroothandelPage() {
         <section className="py-20 lg:py-28 bg-secondary/30">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl">
-              <span className="text-accent font-medium text-xs uppercase tracking-wider">HET PROCES</span>
+              <span className="text-accent-text font-medium text-xs uppercase tracking-wider">HET PROCES</span>
               <h2 className="mt-3 font-serif text-4xl lg:text-5xl font-medium text-foreground">
                 Hoe werkt een projectorder
               </h2>
@@ -498,7 +498,7 @@ export default function GroothandelPage() {
         <section className="py-12 lg:py-20 bg-background">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl">
-              <span className="text-accent font-medium text-xs uppercase tracking-wider">PROJECTEN</span>
+              <span className="text-accent-text font-medium text-xs uppercase tracking-wider">PROJECTEN</span>
               <h2 className="mt-3 font-serif text-4xl lg:text-5xl font-medium text-foreground">
                 Uitgelichte projecten
               </h2>
@@ -529,7 +529,7 @@ export default function GroothandelPage() {
         <section className="py-16 lg:py-24 bg-background">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl">
-              <span className="text-accent font-medium text-xs uppercase tracking-wider">TARIEVEN</span>
+              <span className="text-accent-text font-medium text-xs uppercase tracking-wider">TARIEVEN</span>
               <h2 className="mt-3 font-serif text-4xl lg:text-5xl font-medium text-foreground">
                 Zakelijke tarieven
               </h2>
@@ -565,7 +565,7 @@ export default function GroothandelPage() {
         <section id="faq" className="scroll-mt-24 py-16 lg:py-24 bg-secondary/30">
           <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl">
-              <span className="text-accent font-medium text-xs uppercase tracking-wider">VEELGESTELDE VRAGEN</span>
+              <span className="text-accent-text font-medium text-xs uppercase tracking-wider">VEELGESTELDE VRAGEN</span>
               <h2 className="mt-3 font-serif text-4xl lg:text-5xl font-medium text-foreground">
                 Veelgestelde vragen
               </h2>
@@ -589,10 +589,10 @@ export default function GroothandelPage() {
         </section>
 
         {/* 10. AANVRAAGFORMULIER */}
-        <section id="offerte-form" className="scroll-mt-24 py-20 lg:py-28 bg-primary">
+        <section id="offerte-form" className="scroll-mt-24 py-20 lg:py-28 bg-primary surface-dark">
           <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl">
-              <span className="text-accent font-medium text-xs uppercase tracking-wider">PROJECTOFFERTE</span>
+              <span className="text-accent-text font-medium text-xs uppercase tracking-wider">PROJECTOFFERTE</span>
               <h2 className="mt-3 font-serif text-4xl lg:text-5xl font-medium text-primary-foreground">
                 Projectofferte aanvragen
               </h2>

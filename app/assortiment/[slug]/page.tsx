@@ -123,7 +123,7 @@ export default async function ProductPage({
 
             {/* Info */}
             <div>
-              <span className="text-accent font-medium text-sm uppercase tracking-wider">
+              <span className="text-accent-text font-medium text-sm uppercase tracking-wider">
                 {product.color}
               </span>
               <h1 className="mt-3 font-serif text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">
@@ -189,7 +189,7 @@ export default async function ProductPage({
             </p>
             <a
               href="/#contact"
-              className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-accent hover:text-accent/80 transition-colors"
+              className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-accent-text hover:text-accent-text/80 transition-colors"
             >
               Bekijk groothandel-condities →
             </a>

@@ -37,7 +37,7 @@ export function ProductsSection() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto">
-          <span className="text-accent font-medium text-sm uppercase tracking-wider">
+          <span className="text-accent-text font-medium text-sm uppercase tracking-wider">
             Direct uit Otterlo
           </span>
           <h2 className="mt-4 font-serif text-4xl font-medium tracking-tight text-foreground sm:text-5xl lg:text-6xl text-balance">

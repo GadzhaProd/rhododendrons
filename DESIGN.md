@@ -12,6 +12,7 @@ colors:
   moss-night: "oklch(0.2 0.04 150)"
   bloom-magenta: "oklch(0.65 0.2 340)"
   bloom-ring: "oklch(0.5 0.15 340)"
+  bloom-glow: "oklch(0.78 0.14 340)"
 typography:
   display:
     fontFamily: "'Cormorant Garamond', Georgia, serif"
@@ -75,7 +76,7 @@ components:
     backgroundColor: "{colors.mist-muted}"
   button-accent:
     backgroundColor: "{colors.bloom-magenta}"
-    textColor: "{colors.mist-cream}"
+    textColor: "{colors.moss-night}"
     rounded: "{rounded.md}"
     padding: "12px 24px"
   input:
@@ -85,7 +86,7 @@ components:
     padding: "10px 14px"
     height: "44px"
   kicker:
-    textColor: "{colors.bloom-magenta}"
+    textColor: "{colors.bloom-ring}"
     padding: "0"
   row-link:
     backgroundColor: "{colors.mist-cream}"
@@ -125,7 +126,9 @@ A palette of tinted moss neutrals (mist-cream through moss-night, all chroma 0.0
 - **Moss Deep** `oklch(0.35 0.08 150)`: the primary action color. Button backgrounds, the Header on internal pages, the "Top Rhododendrons" logo, the numerals in the `/plantgids` tips list, the Footer band. Carries the producer's authority without shouting.
 
 ### Secondary (accent)
-- **Bloom Magenta** `oklch(0.65 0.2 340)`: the only saturated color in the system. Kicker labels above every section header, primary-action affordances (the "Offerte aanvragen" CTA, the focus ring on every interactive element), the colored dot next to each variety name, the active-month indicator + bloom cells in the BloomTimeline. Lifted from the actual color of a Nova Zembla bloom. Used sparingly so it reads as a voice, not a UI hint.
+- **Bloom Magenta** `oklch(0.65 0.2 340)`: the only saturated color in the system. Kicker labels above every section header, primary-action affordances (the "Offerte aanvragen" CTA, the focus ring on every interactive element), the colored dot next to each variety name, the active-month indicator + bloom cells in the BloomTimeline. Lifted from the actual color of a Nova Zembla bloom. Used sparingly so it reads as a voice, not a UI hint. Magenta at this lightness is a fill and a graphic color only: it measures 3.39:1 on Mist Cream, so it never sets text there, and white on it fails AA (3.59:1). Text on a magenta fill is Moss Night (`--accent-foreground`, 5.00:1).
+- **Bloom Ring** `oklch(0.5 0.15 340)`: the same hue, darker, for magenta *text* on light surfaces (`--accent-text`, class `text-accent-text`): kickers, prices, inline links, the hover shift on links. 6.17:1 on Mist Cream. Also the focus-ring color.
+- **Bloom Glow** `oklch(0.78 0.14 340)`: the same hue, lighter, for magenta text on dark surfaces. Not a separate class: a dark section carries `surface-dark`, which re-points `--accent-text` to this value, so `text-accent-text` stays correct in both registers (5.12:1 on Moss Deep).
 
 ### Neutral
 - **Mist Cream** `oklch(0.98 0.005 150)`: page background and primary surface. Tinted very slightly toward moss so it never reads as white.
@@ -144,7 +147,7 @@ A palette of tinted moss neutrals (mist-cream through moss-night, all chroma 0.0
 
 **The Warm-Brown-Shadow Eviction Rule.** No `rgba(120, 100, 80, *)` shadows. Anywhere. The pattern was systematically removed from every page (homepage, /groothandel, /assortiment, /plantgids) and every component (catalog-grid, bloom-timeline, bloom-section legend); it is not to return as "depth" or "elevation". If a card needs distinction, use a 1px border in Mist Border. If it needs elevation, reconsider whether it needs to be a card.
 
-**The Forest-Or-Night Rule.** Dark surfaces use Moss Night, never `#000`. Light surfaces use Mist Cream, never `#fff`. The brand hue is in every neutral, always. This is non-negotiable per the OKLCH chroma 0.005–0.08 doctrine in the frontmatter.
+**The Forest-Or-Night Rule.** Dark surfaces use Moss Night, never `#000`. Light surfaces use Mist Cream, never `#fff`; `--card` and `--popover` are `oklch(0.99 0.004 150)`, not `oklch(1 0 0)`. The brand hue is in every neutral, always. This is non-negotiable per the OKLCH chroma 0.005–0.08 doctrine in the frontmatter.
 
 **The No-Framework-Color Rule.** Tailwind's default named colors (`amber-*`, `green-*`, `orange-*`, `red-*`, `blue-*`, `purple-*`) are prohibited in component code. If a semantic state needs color, it draws from the project palette: Moss Deep for "go", Moss Fog for "neutral", Bloom Magenta for "voice/action". The `SpeedBadge` component on `/plantgids` was rewritten because it imported these defaults; the lesson stands.
 
@@ -161,7 +164,7 @@ A palette of tinted moss neutrals (mist-cream through moss-night, all chroma 0.0
 - **Headline** (`font-serif`, weight 500, `text-3xl sm:text-4xl`, line-height 1.15, tracking-tight): section H2 on internal pages. Subordinate to H1, harmonized across `/assortiment`, `/plantgids`, `/groothandel`, AboutSection. The bloom-section H2 (`text-4xl sm:text-5xl lg:text-6xl`) is a deliberate exception: that section's centered title + centered legend + centered disclaimer form a coherent column around the data viz block.
 - **Title** (`font-serif`, weight 500 or 600, `text-xl` to `text-3xl`, line-height 1.3): variety names in catalog rows, tip titles, h3-level. Always ≥20px (Cormorant Twenty-Pixel Floor).
 - **Body** (`font-sans`, weight 400, `text-base`, leading-relaxed): paragraph copy. Max line length capped at `max-w-prose` (~65ch) for editorial reading; tightened to `max-w-2xl` for hero subtitles.
-- **Label / Kicker** (`font-sans`, weight 500, `text-xs uppercase tracking-wider text-accent`): the signature kicker pattern. See **The Running Head Rule** above.
+- **Label / Kicker** (`font-sans`, weight 500, `text-xs uppercase tracking-wider text-accent-text`): the signature kicker pattern. See **The Running Head Rule** above.
 
 ### Named Rules
 
@@ -202,7 +205,7 @@ Depth comes from three mechanisms:
 - **Shape:** subtly rounded (6px / `rounded-md`). Never pill-shaped (avoids the SaaS-CTA look). Never square (too brutalist for the Domaine register).
 - **Primary** (`bg-primary text-primary-foreground hover:bg-primary/90`): Moss Deep background, Mist Cream text, ~12px×24px padding. Used for the main page-level action ("Neem contact op" in AboutSection, "Verstuur bericht" in ContactForm, "Bekijk plantgids" in BloomSection CTA).
 - **Outline** (shadcn `variant="outline"` + `hover:bg-foreground/5 hover:text-foreground`): for secondary navigational CTAs like "Groothandel" on AboutSection and "Bekijk alle rhododendrons" below the homepage ProductsSection grid. ArrowRight icon at `h-4 w-4` follows the text (the canonical CTA-with-arrow convention used across the site, including the /groothandel hero outline CTAs).
-- **Accent** (`bg-accent text-accent-foreground hover:bg-accent/90`): reserved for the "Offerte aanvragen" button in Header + sticky overlay. The only place Bloom Magenta dominates a UI surface.
+- **Accent** (`bg-accent text-accent-foreground hover:bg-accent/90`): reserved for the "Offerte aanvragen" button in Header + sticky overlay. The only place Bloom Magenta dominates a UI surface. Label is Moss Night, not white (see Bloom Magenta).
 - **Dark-hero outline** (`border border-primary-foreground/30 hover:bg-primary-foreground/10`): the dark-background outline variant used on `/groothandel`'s hero band (the PDF download + phone-number buttons). Mirror of the light-register outline but tuned for the `bg-[#0a1a12]` hero context.
 - **Hover transitions:** `transition-colors duration-200 ease-out`. No translate, no scale, no shadow.
 - **Focus-visible:** `ring-2 ring-accent ring-offset-2 ring-offset-background` on every interactive element. The ring is non-negotiable; offset-background ensures it remains visible on tinted surfaces.

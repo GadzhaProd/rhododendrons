@@ -29,7 +29,7 @@ export function AboutSection() {
 
           {/* Mobile-only heading — shows above photo */}
           <div className="block lg:hidden order-1">
-            <span className="text-accent font-medium text-sm uppercase tracking-wider">
+            <span className="text-accent-text font-medium text-sm uppercase tracking-wider">
               OTTERLO • SINDS 2001
             </span>
             <h2 className="mt-4 font-serif text-4xl font-medium tracking-tight text-foreground text-balance">
@@ -39,7 +39,7 @@ export function AboutSection() {
 
           {/* Text Content */}
           <div className="order-3 lg:order-1">
-            <span className="hidden lg:block text-accent font-medium text-sm uppercase tracking-wider">
+            <span className="hidden lg:block text-accent-text font-medium text-sm uppercase tracking-wider">
               OTTERLO • SINDS 2001
             </span>
             <h2 className="hidden lg:block mt-4 font-serif text-4xl font-medium tracking-tight text-foreground sm:text-5xl lg:text-6xl text-balance">
