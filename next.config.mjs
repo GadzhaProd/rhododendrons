@@ -17,6 +17,7 @@ const basePath = process.env.NEXT_PUBLIC_BASE_PATH || ''
 
 // Security headers applied to every route.
 // CSP is intentionally NOT included yet — it needs careful testing against:
+//   - the hero video <source src="/videos/hero.mp4">
 //   - inline JSON-LD <script type="application/ld+json"> in app/layout.tsx + product pages + faq-section
 //   - next/font Google Fonts injection (Cormorant Garamond, DM Sans)
 //   - @vercel/analytics script

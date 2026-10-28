@@ -6,7 +6,6 @@ import { Footer } from "@/components/footer"
 import { WhatsappSticky } from "@/components/whatsapp-sticky"
 import { GroothandelForm } from "./groothandel-form"
 import { PrijslijstButton } from "@/components/prijslijst-button"
-import { HeroFacts } from "@/components/hero-facts"
 
 const groothandelTitle = "Groothandel rhododendrons · Direct van de kweker · Top Rhododendrons"
 const groothandelDescription =
@@ -191,35 +190,129 @@ export default function GroothandelPage() {
       <main className="min-h-screen bg-background">
 
         {/* 1. HERO */}
-        <section className="surface-dark relative overflow-hidden bg-foreground text-primary-foreground pb-16 lg:pb-24">
-          <Image
-            src="/images/B2BHERO.jpg"
-            alt="Rijen bloeiende rhododendrons op de kwekerij in Otterlo"
-            fill
-            priority
-            sizes="100vw"
-            className="object-cover object-center md:object-[center_40%]"
-          />
+        <section className="relative overflow-hidden bg-[#0a1a12] text-primary-foreground pb-20 lg:pb-28">
+          {/* Photo layer (z-0) */}
+          <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+            <Image
+              src="/images/B2BHERO.jpg"
+              alt="Top Rhododendrons kwekerij in Otterlo"
+              fill
+              priority
+              sizes="100vw"
+              className="object-cover object-center md:object-[center_40%]"
+              style={{ filter: "saturate(0.95) contrast(1.02) brightness(1.0)" }}
+            />
+          </div>
+
+          {/* Layer 1 — brand-tint dark overlay (desktop: horizontal) */}
           <div
             aria-hidden="true"
-            className="absolute inset-0 bg-gradient-to-b from-foreground/85 to-foreground/80 md:bg-gradient-to-r md:from-foreground/90 md:via-foreground/75 md:to-foreground/45"
+            className="absolute inset-0 z-10 pointer-events-none hidden md:block"
+            style={{
+              background:
+                "linear-gradient(to right, rgba(8, 22, 15, 0.65) 0%, rgba(12, 30, 22, 0.52) 35%, rgba(15, 38, 28, 0.32) 70%, rgba(18, 42, 30, 0.15) 100%)",
+            }}
+          />
+          {/* Layer 1 — mobile vertical variant */}
+          <div
+            aria-hidden="true"
+            className="absolute inset-0 z-10 pointer-events-none md:hidden"
+            style={{
+              background:
+                "linear-gradient(to bottom, rgba(8, 22, 15, 0.65) 0%, rgba(12, 30, 22, 0.55) 60%, rgba(15, 38, 28, 0.70) 100%)",
+            }}
           />
 
-          <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-28 lg:pt-36">
-            <span className="inline-block text-accent-text font-medium text-sm uppercase tracking-wider">
-              Groothandel · Direct van de kweker
+          {/* Layer 2 — vertical bottom darken */}
+          <div
+            aria-hidden="true"
+            className="absolute inset-0 z-20 pointer-events-none"
+            style={{
+              background:
+                "linear-gradient(to bottom, transparent 0%, transparent 50%, rgba(0, 0, 0, 0.25) 100%)",
+            }}
+          />
+
+          {/* Layer 2b — top header guard: hard dark cap so header never bleeds into H1 */}
+          <div
+            aria-hidden="true"
+            className="absolute inset-0 z-20 pointer-events-none"
+            style={{
+              background:
+                "linear-gradient(to bottom, rgba(8, 22, 15, 0.80) 0%, rgba(8, 22, 15, 0.50) 12%, transparent 30%)",
+            }}
+          />
+
+          {/* Layer 3 — magenta glow top-right */}
+          <div
+            aria-hidden="true"
+            className="absolute z-30 pointer-events-none w-[400px] h-[400px] md:w-[600px] md:h-[600px]"
+            style={{
+              top: "-120px",
+              right: "-80px",
+              background:
+                "radial-gradient(circle, rgba(215, 50, 142, 0.20) 0%, transparent 60%)",
+            }}
+          />
+
+          {/* Layer 4 — green glow bottom-left */}
+          <div
+            aria-hidden="true"
+            className="absolute z-30 pointer-events-none w-[350px] h-[350px] md:w-[500px] md:h-[500px]"
+            style={{
+              bottom: "-100px",
+              left: "-100px",
+              background:
+                "radial-gradient(circle, rgba(60, 180, 100, 0.12) 0%, transparent 60%)",
+            }}
+          />
+
+          {/* Layer 5 — center vignette */}
+          <div
+            aria-hidden="true"
+            className="absolute inset-0 z-40 pointer-events-none opacity-70 md:opacity-100"
+            style={{
+              background:
+                "radial-gradient(ellipse at 50% 40%, transparent 35%, rgba(0, 0, 0, 0.12) 100%)",
+            }}
+          />
+
+          {/* Layer 6 — noise texture */}
+          <div
+            aria-hidden="true"
+            className="absolute inset-0 z-50 pointer-events-none opacity-[0.03]"
+            style={{
+              backgroundImage:
+                "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E\")",
+              backgroundSize: "200px 200px",
+            }}
+          />
+
+          {/* Layer 7 — top edge highlight line */}
+          <div
+            aria-hidden="true"
+            className="absolute top-0 left-0 right-0 z-[60] h-px pointer-events-none"
+            style={{
+              background:
+                "linear-gradient(90deg, transparent, rgba(255,255,255,0.08) 30%, rgba(215,50,142,0.20) 50%, rgba(255,255,255,0.08) 70%, transparent)",
+            }}
+          />
+
+          <div className="relative z-[100] mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-28 lg:pt-36">
+            <span className="inline-block text-accent font-medium text-sm uppercase tracking-wider">
+              GROOTHANDEL · DIRECT VAN DE KWEKER
             </span>
-            <h1 className="mt-4 font-serif text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight text-balance max-w-4xl">
+            <h1 className="mt-4 font-serif text-5xl sm:text-6xl lg:text-7xl font-semibold tracking-tight text-balance max-w-4xl">
               Rhododendrons op stam. Rechtstreeks van onze kwekerij in Otterlo.
             </h1>
-            <p className="mt-6 text-lg sm:text-xl text-primary-foreground/90 leading-relaxed max-w-2xl">
+            <p className="mt-6 text-lg sm:text-xl text-primary-foreground/80 leading-relaxed max-w-2xl">
               Vers gerooid op uw leverdatum. Levering afgestemd op uw project.
             </p>
 
             <div className="mt-10 flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-5">
               <a
                 href="#offerte-form"
-                className="inline-flex items-center justify-center gap-2 bg-accent text-accent-foreground hover:bg-accent/90 rounded-md px-6 py-3 text-sm font-medium transition-colors duration-200 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-foreground"
+                className="inline-flex items-center justify-center gap-2 bg-accent text-accent-foreground hover:bg-accent/90 rounded-md px-6 py-3 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-[#0a1a12]"
               >
                 Vraag offerte aan
                 <ArrowRight className="h-4 w-4" />
@@ -227,17 +320,30 @@ export default function GroothandelPage() {
               <PrijslijstButton />
               <a
                 href="tel:+31620104312"
-                className="inline-flex items-center justify-center gap-2 border border-primary-foreground/30 hover:bg-primary-foreground/10 rounded-md px-6 py-3 text-sm font-medium transition-colors duration-200 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-foreground"
+                className="inline-flex items-center justify-center gap-2 border border-primary-foreground/30 hover:bg-primary-foreground/10 rounded-md px-6 py-3 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-[#0a1a12]"
               >
                 <Phone className="h-4 w-4" />
                 +31 (0)6 20 10 43 12
               </a>
             </div>
 
-            <HeroFacts
-              items={["Sinds 2001", "10.000+ planten op stam", "Aangroeigarantie bij correcte aanplant"]}
-              className="mt-12"
-            />
+            <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-y-8 md:gap-y-0 gap-x-0">
+              <div className="px-4 sm:px-6 md:border-r md:border-primary-foreground/10">
+                <p className="font-serif font-semibold text-5xl text-primary-foreground leading-none" style={{ fontVariantNumeric: 'lining-nums tabular-nums' }}>25+</p>
+                <p className="mt-2 font-sans font-medium text-sm text-primary-foreground">Jaar specialist</p>
+                <p className="mt-1 font-sans text-xs text-primary-foreground/70 leading-relaxed">In rhododendrons sinds 2001</p>
+              </div>
+              <div className="px-4 sm:px-6 md:border-r md:border-primary-foreground/10">
+                <p className="font-serif font-semibold text-5xl text-primary-foreground leading-none" style={{ fontVariantNumeric: 'lining-nums tabular-nums' }}>10.000+</p>
+                <p className="mt-2 font-sans font-medium text-sm text-primary-foreground">Planten op stam</p>
+                <p className="mt-1 font-sans text-xs text-primary-foreground/70 leading-relaxed">Vers gerooid uit Otterlo</p>
+              </div>
+              <div className="px-4 sm:px-6">
+                <p className="font-serif font-semibold text-5xl text-primary-foreground leading-none" style={{ fontVariantNumeric: 'lining-nums tabular-nums' }}>100%</p>
+                <p className="mt-2 font-sans font-medium text-sm text-primary-foreground">Aangroeigarantie</p>
+                <p className="mt-1 font-sans text-xs text-primary-foreground/70 leading-relaxed">Bij correcte aanplant</p>
+              </div>
+            </div>
           </div>
         </section>
 

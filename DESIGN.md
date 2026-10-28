@@ -116,7 +116,7 @@ The system explicitly rejects every register listed in PRODUCT.md: the SaaS land
 - 3-tier section rhythm (compact / standard / generous) with deliberate variance
 - Flat surfaces by default: no shadows on cards, depth via tonal layering and 1px borders
 - Editorial alignment: left-aligned section headers as default (centered allowed only for symmetric data viz blocks where a centered legend + centered disclaimer earn the column)
-- Real photography always: hero photograph, owner portrait, plant variety photographs. Stock + AI imagery are forbidden per PRODUCT.md Principle 4.
+- Real photography always: hero video, owner portrait, plant variety photographs. Stock + AI imagery are forbidden per PRODUCT.md Principle 4.
 
 ## 2. Colors
 
@@ -197,7 +197,7 @@ Depth comes from three mechanisms:
 
 **The No-Glow Rule.** No drop-shadows used as glow. No `box-shadow` with chroma. No backdrop-filter blur as decoration. If a focus state needs visibility, it's the ring system or it's nothing. The bloom-timeline cells were rebuilt to flat-color pills explicitly to enforce this rule; the legend in bloom-section was rebuilt to match.
 
-**The Reduced-Motion Rule.** Every animation, including hover transitions, must respect `prefers-reduced-motion: reduce`. Both heroes are still photographs with no autoplay media; if a video ever returns it must pause under reduced motion and ship with a still poster. Hover-tint transitions should collapse to instant; any reveal animation should crossfade. The system currently has minimal motion (transition-colors on hovers, the hover-scale on homepage product cards) so the surface area is small, but `prefers-reduced-motion` is non-negotiable for anything added later.
+**The Reduced-Motion Rule.** Every animation, including hover transitions and the homepage hero video, must respect `prefers-reduced-motion: reduce`. The hero video should pause; hover-tint transitions should collapse to instant; any reveal animation should crossfade. The system currently has minimal motion (transition-colors on hovers, the video, the hover-scale on homepage product cards) so the surface area is small, but `prefers-reduced-motion` is non-negotiable for anything added later.
 
 ## 5. Components
 
@@ -206,8 +206,7 @@ Depth comes from three mechanisms:
 - **Primary** (`bg-primary text-primary-foreground hover:bg-primary/90`): Moss Deep background, Mist Cream text, ~12px×24px padding. Used for the main page-level action ("Neem contact op" in AboutSection, "Verstuur bericht" in ContactForm, "Bekijk plantgids" in BloomSection CTA).
 - **Outline** (shadcn `variant="outline"` + `hover:bg-foreground/5 hover:text-foreground`): for secondary navigational CTAs like "Groothandel" on AboutSection and "Bekijk alle rhododendrons" below the homepage ProductsSection grid. ArrowRight icon at `h-4 w-4` follows the text (the canonical CTA-with-arrow convention used across the site, including the /groothandel hero outline CTAs).
 - **Accent** (`bg-accent text-accent-foreground hover:bg-accent/90`): reserved for the "Offerte aanvragen" button in Header + sticky overlay. The only place Bloom Magenta dominates a UI surface. Label is Moss Night, not white (see Bloom Magenta).
-- **Dark-hero outline** (`border border-primary-foreground/30 hover:bg-primary-foreground/10`): the dark-background outline variant used on `/groothandel`'s hero band (the PDF download + phone-number buttons). Mirror of the light-register outline but tuned for the dark hero context (`surface-dark` on `bg-foreground`; the focus-ring offset is `ring-offset-foreground`, never a hard-coded hex).
-- **Hero** (`components/hero-section.tsx`, `/groothandel` hero): full-bleed photograph (`B2BHERO.jpg` until the owner's photographs arrive), one `bg-foreground` tint layer as the only overlay (no glows, noise, vignettes or edge lines), left-aligned H1, a kicker only where it names something specific, and two doors in the homepage hero ("Bekijk assortiment" in cream `bg-primary-foreground` with Moss Night text, "Voor hoveniers" as dark-hero outline). The facts line is `HeroFacts` (`components/hero-facts.tsx`): one ruled row of plain sentences in DM Sans 16px, no large numerals, no icons, no labels. It replaced the TrustBar strip and the 25+/10.000+/100% metric trio. The tint must keep text at 4.5:1 over the brightest part of the photo, so re-measure when the photograph changes.
+- **Dark-hero outline** (`border border-primary-foreground/30 hover:bg-primary-foreground/10`): the dark-background outline variant used on `/groothandel`'s hero band (the PDF download + phone-number buttons). Mirror of the light-register outline but tuned for the `bg-[#0a1a12]` hero context.
 - **Hover transitions:** `transition-colors duration-200 ease-out`. No translate, no scale, no shadow.
 - **Focus-visible:** `ring-2 ring-accent ring-offset-2 ring-offset-background` on every interactive element. The ring is non-negotiable; offset-background ensures it remains visible on tinted surfaces.
 
@@ -282,8 +281,8 @@ The 6-card grid on the homepage (a curated preview, not the full catalog).
 - **Do** use the `|` separator in page metadata titles (`Plantgids | Top Rhododendrons`).
 - **Do** include the lucide `ArrowRight` icon after CTA text on outline + ghost buttons ("Bekijk alle rhododendrons", "Bekijk plantgids", "Groothandel", "Vraag offerte aan"). The arrow is the site's canonical CTA punctuation.
 - **Do** test heading copy at every breakpoint. Long Dutch compounds plus large clamp scales plus narrow grids will overflow; the viewport is part of the design.
-- **Do** ship real photography. Hero photograph, owner portrait, plant variety photographs. Anything else is a PRODUCT.md Principle 4 violation.
-- **Do** respect `prefers-reduced-motion` on every animation, and on any video that is added later.
+- **Do** ship real photography. Hero video, owner portrait, plant variety photographs. Anything else is a PRODUCT.md Principle 4 violation.
+- **Do** respect `prefers-reduced-motion` on every animation, including the hero video.
 
 ### Don't:
 - **Don't** render a SaaS landing page. PRODUCT.md names this as an anti-reference: no hero card grids with icon plus heading plus 2-line text, no decorative gradient orbs, no rotating testimonial slider, no "trusted by 10,000+ growers" logo strip, no hero-metric template (big-number / small-label / supporting-stat).
